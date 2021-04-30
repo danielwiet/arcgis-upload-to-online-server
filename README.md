@@ -8,4 +8,6 @@ Replace strings that begin with 'Replace this'
 
 Keep strings otherwise
 
-If shapefiles load but unknown error prevents the upload to the online server, exit ArcGis Pro, delete the project folder and restart from scratch
+If shapefiles load but error prevents the upload to the online server, exit ArcGis Pro, delete the project folder and restart from scratch
+
+There is a known bug regarding service_draft.allowExporting, resulting in the value not reflecting on the server. It will have to be manually toggled in the settings
