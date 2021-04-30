@@ -11,7 +11,7 @@ aprx = arcpy.mp.ArcGISProject("CURRENT")
 m = aprx.listMaps("Map")[0]
 
 # IMPORTANT!!! paste folder path within the single quote. LEAVE THE r in front!!!!
-path = r'COPY AND PASTE THE FOLDER PATH AS TEXT (right click the address bar)'
+path = r'REPLACE THIS: COPY AND PASTE THE FOLDER PATH AS TEXT (right click the address bar)'
 
 # changes the os directory using the full path name
 os.chdir(path)
@@ -27,14 +27,14 @@ for shp_path in shps:
 
 aprx.save()
 
-arcpy.SignInToPortal('https://www.arcgis.com', 'USER_NAME', 'USER_PASSWORD')
+arcpy.SignInToPortal('https://www.arcgis.com', 'REPLACE THIS: USER_NAME', 'REPLACE THIS: USER_PASSWORD')
 
 # Set output file names
 # where to store the ssd files
-outdir = r"LOCATION TO STORE THE .SSD FILES"
+outdir = r"REPLACE THIS: LOCATION TO STORE THE .SSD FILES"
 
 # what to name it once published
-service = "NAME OF FEATURE LAYER"
+service = "REPLACE THIS: NAME OF FEATURE LAYER"
 
 sddraft_filename = service + ".sddraft"
 sddraft_output_filename = os.path.join(outdir, sddraft_filename)
@@ -52,17 +52,17 @@ sharing_draft = m.getWebLayerSharingDraft("HOSTING_SERVER", "FEATURE", service)
 # sharing_draft.allow_exporting = True
 sharing_draft.allowExporting = True
 
-sharing_draft.portalFolder = "NAME OF FOLDER ON ACRONLINE TO SAVE THE FEATURE LAYER"
+sharing_draft.portalFolder = "REPLACE THIS: NAME OF FOLDER ON ACRONLINE TO SAVE THE FEATURE LAYER"
 
-sharing_draft.summary = "INITIAL SUMMARY OF THE FEATURE LAYER"
+sharing_draft.summary = "REPLACE THIS: INITIAL SUMMARY OF THE FEATURE LAYER"
 
-sharing_draft.tags = "TAGS SEPARATED BY COMMAS"
+sharing_draft.tags = "REPLACE THIS: TAGS SEPARATED BY COMMAS"
 
-sharing_draft.description = "DETAILED DESCRIPTION OF THE FEATURE LAYER"
+sharing_draft.description = "REPLACE THIS: DETAILED DESCRIPTION OF THE FEATURE LAYER"
 
-sharing_draft.credits = "CREDITS (ATTRIBUTIONS)"
+sharing_draft.credits = "REPLACE THIS: CREDITS (ATTRIBUTIONS)"
 
-sharing_draft.useLimitations = "TERMS OF USE"
+sharing_draft.useLimitations = "REPLACE THIS: TERMS OF USE"
 
 # Create Service Definition Draft file
 sharing_draft.exportToSDDraft(sddraft_output_filename)
