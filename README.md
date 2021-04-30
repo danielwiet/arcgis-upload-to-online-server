@@ -7,3 +7,5 @@ This code imports all shapefiles from a project folder, signs into ArcGis Online
 Replace strings that begin with 'Replace this'
 
 Keep strings otherwise
+
+If shapefiles load but unknown error prevents the upload to the online server, exit ArcGis Pro, delete the project folder and restart from scratch
